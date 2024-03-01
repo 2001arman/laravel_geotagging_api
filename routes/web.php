@@ -28,6 +28,7 @@ use App\Http\Controllers\PatientController;
 use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\PaystackController;
 use App\Http\Controllers\PayTMController;
+use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PrescriptionController;
 use App\Http\Controllers\PurchaseMedicineController;
 use App\Http\Controllers\RazorpayController;
@@ -397,6 +398,8 @@ Route::prefix('admin')->middleware('auth', 'xss', 'checkUserStatus')->group(func
     Route::get('medicine-bills-pdf/{id}', [MedicineBillController::class, 'convertToPDF'])->name('medicine.bill.pdf');
     Route::get('medicines-uses-check/{medicine}', [MedicineController::class, 'checkUseOfMedicine'])->name('check.use.medicine');
     Route::get('get-medicine-category/{category}', [MedicineBillController::class, 'getMedicineCategory'])->name('get-medicine-category');
+
+    Route::resource('pegawai', PegawaiController::class)->parameters(['pegawais' => 'pegawai']);
 });
 
 require __DIR__.'/auth.php';

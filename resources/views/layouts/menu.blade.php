@@ -14,6 +14,15 @@
     <li class="nav-item {{ Request::is('admin/staffs*') ? 'active' : '' }}">
         <a class="nav-link d-flex align-items-center py-4" aria-current="page" href="{{ route('staffs.index') }}">
             <span class="aside-menu-icon pe-3"><i class="fas fa-users"></i></span>
+            <span class="aside-menu-title">Pegawai</span>
+        </a>
+    </li>
+@endcan
+
+@can('manage_staff')
+    <li class="nav-item {{ Request::is('admin/staffs*') ? 'active' : '' }}">
+        <a class="nav-link d-flex align-items-center py-4" aria-current="page" href="{{ route('staffs.index') }}">
+            <span class="aside-menu-icon pe-3"><i class="fas fa-users"></i></span>
             <span class="aside-menu-title">{{ __('messages.staffs') }}</span>
         </a>
     </li>

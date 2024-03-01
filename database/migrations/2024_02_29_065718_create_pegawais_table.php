@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('pegawais', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('nip');
+            $table->string('email', 191)->unique();
+            $table->string('password');
+            $table->integer('gender')->nullable();
+            $table->date('tanggal_lahir')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('divisi')->nullable();
             $table->timestamps();
         });
     }
