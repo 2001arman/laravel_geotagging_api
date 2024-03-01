@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\ApiController;
 use App\Models\Pegawai;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +18,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/pegawai', function(){
     Return Pegawai::get();
 });
+
+Route::post('/login', [ApiController::class, 'login']);
+
+Route::post('/cuti', [ApiController::class, 'cuti']);
+
+Route::post('/izin', [ApiController::class, 'izin']);
+
+Route::post('/absen', [ApiController::class, 'absen']);
+
+Route::get('/riwayat-absensi/{id}', [ApiController::class, 'riwayatAbsensi']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
