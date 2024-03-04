@@ -167,7 +167,7 @@ class ApiController extends Controller
 
     public function riwayatAbsensi($id){
         
-        $absensi = Absensi::where('id_pegawai', $id)->first();
+        $absensi = Absensi::where('id_pegawai', $id)->get();
         $response = [
             'code' => 200,
             'status' => 'success',
