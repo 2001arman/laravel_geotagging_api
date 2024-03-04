@@ -166,8 +166,17 @@ class ApiController extends Controller
     }
 
     public function riwayatAbsensi($id){
+        // Set the timezone to 'Asia/Jakarta'
+        date_default_timezone_set('Asia/Jakarta');
         
         $absensi = Absensi::where('id_pegawai', $id)->get();
+
+        // Convert the datetime values to 'Asia/Jakarta' timezone
+        foreach ($absensi as $record) {
+            $record->created_at = $record->created_at->addHours(7);
+            $record->updated_at = $record->updated_at->addHours(7);
+        }
+
         $response = [
             'code' => 200,
             'status' => 'success',
