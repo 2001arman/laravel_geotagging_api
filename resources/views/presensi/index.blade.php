@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    Pegawai
+    Presensi
 @endsection
 @section('css')
 {{--    <link rel="stylesheet" href="{{ asset('assets/css/sub-header.css') }}">--}}
@@ -13,7 +13,7 @@
         {{ Form::hidden('medicine', __('messages.medicine.medicine'), ['id' => 'Medicine']) }}
         <div class="d-flex flex-column">
             @include('flash::message')
-            <livewire:pegawai-table/>
+            <livewire:presensi-table/>
             {{--            @include('medicines.table')--}}
         </div>
         {{-- @include('partials.page.templates.templates') --}}

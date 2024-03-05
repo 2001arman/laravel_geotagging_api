@@ -28,11 +28,6 @@
                     <div class="d-flex justify-content-between">
                         <label for="password" class="form-label">{{ __('messages.patient.password') .':' }}<span
                                     class="required"></span></label>
-                        @if (Route::has('password.request'))
-                            <a href="{{ route('password.request') }}" class="link-info fs-6 text-decoration-none">
-                                {{ __('messages.common.forgot_your_password').'?' }}
-                            </a>
-                        @endif
                     </div>
                     <input name="password" type="password" class="form-control" id="password" required placeholder="Enter Password">
                 </div>
@@ -43,13 +38,6 @@
                 </div>
                 <div class="d-grid">
                     <button type="submit" class="btn btn-primary">{{ __('messages.login') }}</button>
-                </div>
-
-                <div class="d-flex align-items-center mb-10 mt-4">
-                    <span class="text-gray-700 me-2">{{__('messages.web.new_here').'?'}}</span>
-                    <a href="{{ route('register') }}" class="link-info fs-6 text-decoration-none">
-                        {{__('messages.web.create_an_account')}}
-                    </a>
                 </div>
             </form>
         </div>

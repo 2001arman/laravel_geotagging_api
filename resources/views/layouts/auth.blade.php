@@ -38,7 +38,7 @@
                 <div class="copyright text-center text-muted">
                     {{ __('messages.all_rights_reserved') }} &copy; {{ date('Y') }} <a href="/"
                                                                   class="font-weight-bold ml-1"
-                                                                      target="_blank">{{ getAppName() }}</a>
+                                                                      target="_blank">Skripsi Arman Geotagging</a>
                     </div>
                 </div>
             </div>

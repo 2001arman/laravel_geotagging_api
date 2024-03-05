@@ -34,6 +34,18 @@ class PegawaiController extends AppBaseController
         return view('pegawai.index');
     }
 
+    public function presensiIndex(){
+        return view('presensi.index');
+    }
+
+    public function izinIndex(){
+        return view('izin.index');
+    }
+
+    public function cutiIndex(){
+        return view('cuti.index');
+    }
+
     /**
      * Show the form for creating a new Pegawai.
      *

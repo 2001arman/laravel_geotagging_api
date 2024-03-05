@@ -78,7 +78,10 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::middleware('setLanguage')->group(function () {
-    Route::get('/', [FrontController::class, 'medical'])->name('medical');
+    // Route::get('/', [FrontController::class, 'medical'])->name('medical');
+    Route::get('/', function(){
+        return redirect(route('login'));
+    })->name('medical');
     Route::get('/medical-about-us', [FrontController::class, 'medicalAboutUs'])->name('medicalAboutUs');
     Route::get('/medical-services', [FrontController::class, 'medicalServices'])->name('medicalServices');
     Route::get('/medical-appointment', [FrontController::class, 'medicalAppointment'])->name('medicalAppointment');
@@ -187,7 +190,10 @@ Route::middleware('auth', 'xss', 'checkUserStatus')->group(function () {
 Route::get('cancel-appointment/{patient_id}/{appointment_unique_id}', [AppointmentController::class, 'cancelAppointment'])->name('cancelAppointment');
 
 Route::prefix('admin')->middleware('auth', 'xss', 'checkUserStatus', 'checkImpersonateUser', 'permission:manage_admin_dashboard')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    // Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/dashboard', function(){
+        return redirect(route('pegawai.index'));
+    })->name('admin.dashboard');
 });
 
 Route::prefix('admin')->middleware('auth', 'xss', 'checkUserStatus', 'checkImpersonateUser')->group(function () {
@@ -400,6 +406,9 @@ Route::prefix('admin')->middleware('auth', 'xss', 'checkUserStatus')->group(func
     Route::get('get-medicine-category/{category}', [MedicineBillController::class, 'getMedicineCategory'])->name('get-medicine-category');
 
     Route::resource('pegawai', PegawaiController::class)->parameters(['pegawais' => 'pegawai']);
+    Route::get('/presensi', [PegawaiController::class, 'presensiIndex'])->name('presensi.index');
+    Route::get('/izin', [PegawaiController::class, 'izinIndex'])->name('izin.index');
+    Route::get('/cuti', [PegawaiController::class, 'cutiIndex'])->name('cuti.index');
 });
 
 require __DIR__.'/auth.php';
