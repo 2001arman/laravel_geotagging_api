@@ -173,8 +173,8 @@ class ApiController extends Controller
 
         // Convert the datetime values to 'Asia/Jakarta' timezone
         foreach ($absensi as $record) {
-            $record->created_at = $record->created_at->addHours(7);
-            $record->updated_at = $record->updated_at->addHours(7);
+            $record->created_at = $record->created_at->addHours(8);
+            $record->updated_at = $record->updated_at->addHours(8);
         }
 
         $response = [
