@@ -169,7 +169,7 @@ class ApiController extends Controller
         // Set the timezone to 'Asia/Jakarta'
         date_default_timezone_set('Asia/Jakarta');
         
-        $absensi = Absensi::where('id_pegawai', $id)->get();
+        $absensi = Absensi::where('id_pegawai', $id)->orderBy('created_at', 'desc')->get();
 
         // Convert the datetime values to 'Asia/Jakarta' timezone
         foreach ($absensi as $record) {
