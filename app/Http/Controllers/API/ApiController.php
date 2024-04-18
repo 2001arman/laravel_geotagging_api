@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\Absensi;
 use App\Models\Cuti;
+use App\Models\Holiday;
 use App\Models\Izin;
 use App\Models\Pegawai;
 use Carbon\Carbon;
@@ -186,4 +187,15 @@ class ApiController extends Controller
         return response()->json($response, 200);
     }
     
+    public function getDataHoliday(){
+        $holiday = Holiday::get();
+
+        $response = [
+            'code' => 200,
+            'status' => "success",
+            "data" => $holiday,
+        ];
+
+        return response()->json($response, 200);
+    }
 }

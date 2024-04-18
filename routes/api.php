@@ -29,6 +29,8 @@ Route::post('/absen', [ApiController::class, 'absen']);
 
 Route::get('/riwayat-absensi/{id}', [ApiController::class, 'riwayatAbsensi']);
 
+Route::get('/holiday', [ApiController::class, 'getDataHoliday']);
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
