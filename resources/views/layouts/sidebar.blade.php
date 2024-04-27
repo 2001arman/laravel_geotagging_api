@@ -11,7 +11,7 @@
             </svg>
         </button>
     </div>
-    <form class="d-flex position-relative aside-menu-container__aside-search search-control py-3 mt-1">
+    <!-- <form class="d-flex position-relative aside-menu-container__aside-search search-control py-3 mt-1">
         <div class="position-relative w-100">
             <input class="form-control" type="text" placeholder="{{ __('messages.common.search') }}" aria-label="Search" id="menuSearch">
             <span class="aside-menu-container__search-icon position-absolute d-flex align-items-center top-0 bottom-0">
@@ -22,7 +22,7 @@
                  </svg>
             </span>
         </div>
-    </form>
+    </form> -->
     <div class="sidebar-scrolling">
         <ul class="aside-menu-container__aside-menu nav flex-column">
             @include('layouts.menu')
