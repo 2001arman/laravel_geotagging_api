@@ -124,8 +124,8 @@ class ApiController extends Controller
 
         try {
             DB::beginTransaction();
-            // $absensi = Absensi::where('id_pegawai', $input['id_pegawai'])->whereDate('created_at', Carbon::today())->first();
-            $absensi = null;
+            $absensi = Absensi::where('id_pegawai', $input['id_pegawai'])->whereDate('created_at', Carbon::today())->first();
+            // $absensi = null;
             if($absensi == null){
                 $absen =  Absensi::create($input);
                 
