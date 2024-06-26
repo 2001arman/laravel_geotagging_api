@@ -12,32 +12,41 @@ To get this project up and running on your local machine, follow these steps:
    ```sh
    cp .env.example .env
 
-2. **Create `.env` file**
+2. **Install Composer Dependencies**
 
-   Copy the `.env.example` file to a new file named `.env`:
+   Install the PHP dependencies using Composer:
    ```sh
-   cp .env.example .env
+   composer install
 
-3. **Create `.env` file**
+3. **Install NPM Dependencies**
 
-   Copy the `.env.example` file to a new file named `.env`:
+   Install the Node.js dependencies using NPM:
    ```sh
-   cp .env.example .env
+   npm install
 
-4. **Create `.env` file**
+4. **Compile Assets**
 
-   Copy the `.env.example` file to a new file named `.env`:
+   Compile the frontend assets using Laravel Mix:
    ```sh
-   cp .env.example .env
+   npm run dev
 
-5. **Create `.env` file**
+5. **Run Database Migrations**
 
-   Copy the `.env.example` file to a new file named `.env`:
+   Set up the database schema by running the migrations:
    ```sh
-   cp .env.example .env
+   php artisan migrate
 
-6. **Create `.env` file**
+6. **Seed the Database**
 
-   Copy the `.env.example` file to a new file named `.env`:
+   Populate the database with initial data:
    ```sh
-   cp .env.example .env
+   php artisan db:seed
+
+
+## Admin User
+
+You can log in to the admin interface using the following credentials:
+
+Email: admin@unmul.com
+Password: 123456
+
